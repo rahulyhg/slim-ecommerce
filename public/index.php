@@ -7,10 +7,13 @@ require __DIR__ . '/../vendor/autoload.php';
 
 $app = AppFactory::create();
 
-$dir = '/slim-ecommerce/public/';
-
-$app->get($dir.'', function (Request $request, Response $response, $args) {
+$app->get('/', function (Request $request, Response $response, $args) {
     $response->getBody()->write("Hello world!");
+    return $response;
+});
+
+$app->get('/login', function (Request $request, Response $response, $args) {
+    $response->getBody()->write("Welcome to login page");
     return $response;
 });
 
