@@ -1,3 +1,7 @@
+# No Name so far
+This should be a small e-commerce framework.
+This projects purpose is to learn how an ehsop works so no need to go full ham on shit!
+
 # Installation
 ```
 git clone https://github.com/schnitzelaufzug/slim-ecommerce
