@@ -3,6 +3,8 @@
 namespace App\Controller;
 
 use Psr\Container\ContainerInterface;
+use Psr\Http\Message\ServerRequestInterface as Request;
+use Psr\Http\Message\ResponseInterface as Response;
 
 class HomeController
 {
@@ -11,10 +13,14 @@ class HomeController
     public function __construct(ContainerInterface $container)
     {
         $this->container = $container;
+        $this->view = $this->container->get('view');
     }
 
-    public function index($request, $response, $args)
+    public function index(Request $request, Response $response, $args)
     {
-        return $this->container->get('view')->display('home.tpl');
+        $this->view->assign('name', 'herman');
+        $this->view->display('home.tpl');
+
+        return $response;
     }
 }
